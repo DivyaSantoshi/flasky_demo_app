@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.7.1 on darwin)" generated="20220216 19:10:45.144" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="/Users/divya/Desktop/Divya_Assignment_Signant/flasky_demo_app/tests">
+<suite id="s1-s1" name="01 Register" source="/Users/divya/Desktop/Divya_Assignment_Signant/flasky_demo_app/tests/01_register.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Demo Application</arg>
+<arg>AND</arg>
+<arg>Verify Demo Application Is Open</arg>
+<arg>AND</arg>
+<arg>Initialize All Required Variables</arg>
+<arg>AND</arg>
+<arg>Register User</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Demo Application" library="register_resource">
+<doc>Opens demo application in a browser</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220216 19:10:45.709" level="INFO">Opening browser 'chrome' to base url 'http://0.0.0.0:8080/'.</msg>
+<status status="PASS" starttime="20220216 19:10:45.709" endtime="20220216 19:10:48.597"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:45.709" endtime="20220216 19:10:48.598"/>
+</kw>
+<kw name="Verify Demo Application Is Open" library="register_resource">
+<doc>Verifies if demo application is open</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${LOC_DEMO_APP_HEADER_TEXT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220216 19:10:48.642" level="INFO">Current page contains element 'xpath=//a[text()="Demo app"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:48.600" endtime="20220216 19:10:48.643"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Demo Application Opened Successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220216 19:10:48.644" level="INFO">Demo Application Opened Successfully</msg>
+<status status="PASS" starttime="20220216 19:10:48.644" endtime="20220216 19:10:48.644"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:48.598" endtime="20220216 19:10:48.645"/>
+</kw>
+<kw name="Initialize All Required Variables" library="register_resource">
+<doc>This keyword initializes all the required variables.</doc>
+<kw name="Generate Random String" library="String">
+<var>${RNUM}</var>
+<arg>3</arg>
+<arg>[LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220216 19:10:48.647" level="INFO">${RNUM} = pvf</msg>
+<status status="PASS" starttime="20220216 19:10:48.646" endtime="20220216 19:10:48.647"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${RPHONE_NUM}</var>
+<arg>10</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220216 19:10:48.648" level="INFO">${RPHONE_NUM} = 5530468143</msg>
+<status status="PASS" starttime="20220216 19:10:48.647" endtime="20220216 19:10:48.648"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${USERNAME_NEW}</var>
+<arg>${USERNAME}${RNUM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220216 19:10:48.649" level="INFO">${USERNAME_NEW} = test.namepvf</msg>
+<status status="PASS" starttime="20220216 19:10:48.648" endtime="20220216 19:10:48.649"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${USERNAME_NEW}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220216 19:10:48.650" level="INFO">${USERNAME_NEW} = test.namepvf</msg>
+<status status="PASS" starttime="20220216 19:10:48.649" endtime="20220216 19:10:48.650"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PASSWORD_NEW}</var>
+<arg>${PASSWORD}${RNUM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220216 19:10:48.652" level="INFO">${PASSWORD_NEW} = TestNpvf</msg>
+<status status="PASS" starttime="20220216 19:10:48.651" endtime="20220216 19:10:48.652"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${PASSWORD_NEW}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220216 19:10:48.654" level="INFO">${PASSWORD_NEW} = TestNpvf</msg>
+<status status="PASS" starttime="20220216 19:10:48.653" endtime="20220216 19:10:48.654"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${FIRSTNAME_NEW}</var>
+<arg>${FIRSTNAME}${RNUM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220216 19:10:48.656" level="INFO">${FIRSTNAME_NEW} = First_pvf</msg>
+<status status="PASS" starttime="20220216 19:10:48.655" endtime="20220216 19:10:48.656"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${FIRSTNAME_NEW}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220216 19:10:48.658" level="INFO">${FIRSTNAME_NEW} = First_pvf</msg>
+<status status="PASS" starttime="20220216 19:10:48.657" endtime="20220216 19:10:48.659"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${FAMILYNAME_NEW}</var>
+<arg>${FAMILYNAME}${RNUM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220216 19:10:48.662" level="INFO">${FAMILYNAME_NEW} = Family_pvf</msg>
+<status status="PASS" starttime="20220216 19:10:48.661" endtime="20220216 19:10:48.662"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${FAMILYNAME_NEW}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220216 19:10:48.663" level="INFO">${FAMILYNAME_NEW} = Family_pvf</msg>
+<status status="PASS" starttime="20220216 19:10:48.662" endtime="20220216 19:10:48.663"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PHONE_NUM}</var>
+<arg>${RPHONE_NUM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220216 19:10:48.664" level="INFO">${PHONE_NUM} = 5530468143</msg>
+<status status="PASS" starttime="20220216 19:10:48.663" endtime="20220216 19:10:48.664"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${PHONE_NUM}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220216 19:10:48.665" level="INFO">${PHONE_NUM} = 5530468143</msg>
+<status status="PASS" starttime="20220216 19:10:48.664" endtime="20220216 19:10:48.665"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:48.645" endtime="20220216 19:10:48.666"/>
+</kw>
+<kw name="Register User" library="register_resource">
+<doc>Register new user</doc>
+<kw name="Register User Information" library="register_resource">
+<doc>Registers user</doc>
+<kw name="Open Register Link" library="register_resource">
+<doc>Registers user by clicking on the Register link</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOC_REGISTER_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:48.669" level="INFO">Clicking element 'xpath=//a[@href="/register"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:48.668" endtime="20220216 19:10:48.816"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${LOC_REGISTER_HEADER_TEXT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220216 19:10:48.859" level="INFO">Current page contains element 'xpath=//h1[text()="Register"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:48.816" endtime="20220216 19:10:48.859"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:48.667" endtime="20220216 19:10:48.859"/>
+</kw>
+<kw name="Enter Username" library="register_resource">
+<arg>${USERNAME_NEW}</arg>
+<doc>Enters username in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_USERNAME}</arg>
+<arg>${USER_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:48.862" level="INFO">Typing text 'test.namepvf' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20220216 19:10:48.861" endtime="20220216 19:10:49.130"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:48.860" endtime="20220216 19:10:49.130"/>
+</kw>
+<kw name="Enter Password" library="register_resource">
+<arg>${PASSWORD_NEW}</arg>
+<doc>Enters password in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_PASSWORD}</arg>
+<arg>${PASSWORD_NEW}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:49.131" level="INFO">Typing text 'TestNpvf' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220216 19:10:49.131" endtime="20220216 19:10:49.239"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:49.130" endtime="20220216 19:10:49.240"/>
+</kw>
+<kw name="Enter FirstName" library="register_resource">
+<arg>${FIRSTNAME_NEW}</arg>
+<doc>Enters firstname in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_FIRSTNAME}</arg>
+<arg>${FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:49.242" level="INFO">Typing text 'First_pvf' into text field 'id=firstname'.</msg>
+<status status="PASS" starttime="20220216 19:10:49.241" endtime="20220216 19:10:49.407"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:49.240" endtime="20220216 19:10:49.408"/>
+</kw>
+<kw name="Enter FamilyName" library="register_resource">
+<arg>${FAMILYNAME_NEW}</arg>
+<doc>Enters lastname in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_LASTNAME}</arg>
+<arg>${FAMILY_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:49.409" level="INFO">Typing text 'Family_pvf' into text field 'id=lastname'.</msg>
+<status status="PASS" starttime="20220216 19:10:49.408" endtime="20220216 19:10:49.525"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:49.408" endtime="20220216 19:10:49.525"/>
+</kw>
+<kw name="Enter PhoneNumber" library="register_resource">
+<doc>Enters phone number in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_PHONE}</arg>
+<arg>${PHONE_NUM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:49.526" level="INFO">Typing text '5530468143' into text field 'id=phone'.</msg>
+<status status="PASS" starttime="20220216 19:10:49.526" endtime="20220216 19:10:49.614"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:49.526" endtime="20220216 19:10:49.614"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:48.667" endtime="20220216 19:10:49.614"/>
+</kw>
+<kw name="Click Register Button" library="register_resource">
+<doc>Clicks on Register button</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${LOC_REGISTER_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220216 19:10:49.626" level="INFO">Current page contains element 'xpath=//input[@value="Register"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:49.615" endtime="20220216 19:10:49.626"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOC_REGISTER_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:49.627" level="INFO">Clicking element 'xpath=//input[@value="Register"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:49.626" endtime="20220216 19:10:49.783"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOC_LOG_IN_HEADER_TEXT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220216 19:10:49.783" endtime="20220216 19:10:49.801"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Registration done successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220216 19:10:49.802" level="INFO">Registration done successfully</msg>
+<status status="PASS" starttime="20220216 19:10:49.801" endtime="20220216 19:10:49.802"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:49.614" endtime="20220216 19:10:49.802"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:48.666" endtime="20220216 19:10:49.802"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:45.708" endtime="20220216 19:10:49.802"/>
+</kw>
+<test id="s1-s1-t1" name="Review Registered User">
+<kw name="Open Demo App Link" library="register_resource">
+<doc>Click on demo app link</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${LOC_DEMO_APP_LINK}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220216 19:10:49.816" level="INFO">Current page contains element 'xpath=//a[text()="Demo app"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:49.804" endtime="20220216 19:10:49.816"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOC_DEMO_APP_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:49.817" level="INFO">Clicking element 'xpath=//a[text()="Demo app"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:49.816" endtime="20220216 19:10:49.898"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:49.804" endtime="20220216 19:10:49.898"/>
+</kw>
+<kw name="Login User" library="register_resource">
+<doc>Login user</doc>
+<kw name="Open Login Link" library="register_resource">
+<doc>Opens Login link</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOC_LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:49.901" level="INFO">Clicking element 'xpath=//a[@href="/login"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:49.901" endtime="20220216 19:10:49.987"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOC_TXT_USERNAME}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220216 19:10:49.988" endtime="20220216 19:10:50.003"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:49.900" endtime="20220216 19:10:50.003"/>
+</kw>
+<kw name="Enter Username" library="register_resource">
+<arg>${USERNAME_NEW}</arg>
+<doc>Enters username in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_USERNAME}</arg>
+<arg>${USER_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.005" level="INFO">Typing text 'test.namepvf' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.004" endtime="20220216 19:10:50.104"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.003" endtime="20220216 19:10:50.104"/>
+</kw>
+<kw name="Enter Password" library="register_resource">
+<arg>${PASSWORD_NEW}</arg>
+<doc>Enters password in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_PASSWORD}</arg>
+<arg>${PASSWORD_NEW}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.106" level="INFO">Typing text 'TestNpvf' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.105" endtime="20220216 19:10:50.193"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.104" endtime="20220216 19:10:50.193"/>
+</kw>
+<kw name="Click Login Button" library="register_resource">
+<doc>Clicks on Login button</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${LOC_LOGIN_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220216 19:10:50.205" level="INFO">Current page contains element 'xpath=//input[@value="Log In"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.194" endtime="20220216 19:10:50.205"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOC_LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.206" level="INFO">Clicking element 'xpath=//input[@value="Log In"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.205" endtime="20220216 19:10:50.347"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOC_USER_INFO_HEADER_TEXT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220216 19:10:50.348" endtime="20220216 19:10:50.361"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${LOC_USER_CONTENT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220216 19:10:50.373" level="INFO">Current page contains element 'id=content'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.361" endtime="20220216 19:10:50.373"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Login success</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220216 19:10:50.373" level="INFO">Login success</msg>
+<status status="PASS" starttime="20220216 19:10:50.373" endtime="20220216 19:10:50.374"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.193" endtime="20220216 19:10:50.374"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:49.899" endtime="20220216 19:10:50.374"/>
+</kw>
+<kw name="Review User Information" library="register_resource">
+<doc>Review registered user information</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${USERNAME_VISIBLE}</var>
+<arg>${LOC_TXT_USERNAME}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.404" level="INFO">${USERNAME_VISIBLE} = test.namepvf</msg>
+<status status="PASS" starttime="20220216 19:10:50.376" endtime="20220216 19:10:50.404"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${USERNAME_NEW}</arg>
+<arg>${USERNAME_VISIBLE}</arg>
+<arg>Displayed Username is incorrect.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220216 19:10:50.404" endtime="20220216 19:10:50.405"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${FNAME_VISIBLE}</var>
+<arg>${LOC_TXT_FIRSTNAME}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.425" level="INFO">${FNAME_VISIBLE} = First_pvf</msg>
+<status status="PASS" starttime="20220216 19:10:50.405" endtime="20220216 19:10:50.425"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${FIRSTNAME_NEW}</arg>
+<arg>${FNAME_VISIBLE}</arg>
+<arg>Displayed First Name is incorrect.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220216 19:10:50.425" endtime="20220216 19:10:50.426"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LNAME_VISIBLE}</var>
+<arg>${LOC_TXT_LASTNAME}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.447" level="INFO">${LNAME_VISIBLE} = Family_pvf</msg>
+<status status="PASS" starttime="20220216 19:10:50.426" endtime="20220216 19:10:50.447"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${FAMILYNAME_NEW}</arg>
+<arg>${LNAME_VISIBLE}</arg>
+<arg>Displayed Family Name is incorrect.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220216 19:10:50.448" endtime="20220216 19:10:50.448"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${PHONE_VISIBLE}</var>
+<arg>${LOC_TXT_PHONE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.468" level="INFO">${PHONE_VISIBLE} = 5530468143</msg>
+<status status="PASS" starttime="20220216 19:10:50.448" endtime="20220216 19:10:50.468"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${PHONE_NUM}</arg>
+<arg>${PHONE_VISIBLE}</arg>
+<arg>Displayed Phone Number is incorrect.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220216 19:10:50.468" endtime="20220216 19:10:50.468"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.375" endtime="20220216 19:10:50.469"/>
+</kw>
+<kw name="Logout User" library="register_resource" type="TEARDOWN">
+<doc>Logout user</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOC_LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.470" level="INFO">Clicking element 'xpath=//a[@href="/logout"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.470" endtime="20220216 19:10:50.551"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.469" endtime="20220216 19:10:50.551"/>
+</kw>
+<doc>Review registered user information</doc>
+<tag>UICase</tag>
+<status status="PASS" starttime="20220216 19:10:49.802" endtime="20220216 19:10:50.551"/>
+</test>
+<test id="s1-s1-t2" name="Verify Existing User Registration">
+<kw name="Register User Information" library="register_resource">
+<doc>Registers user</doc>
+<kw name="Open Register Link" library="register_resource">
+<doc>Registers user by clicking on the Register link</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOC_REGISTER_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.555" level="INFO">Clicking element 'xpath=//a[@href="/register"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.554" endtime="20220216 19:10:50.635"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${LOC_REGISTER_HEADER_TEXT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220216 19:10:50.648" level="INFO">Current page contains element 'xpath=//h1[text()="Register"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.636" endtime="20220216 19:10:50.648"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.554" endtime="20220216 19:10:50.648"/>
+</kw>
+<kw name="Enter Username" library="register_resource">
+<arg>${USERNAME_NEW}</arg>
+<doc>Enters username in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_USERNAME}</arg>
+<arg>${USER_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.649" level="INFO">Typing text 'test.namepvf' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.649" endtime="20220216 19:10:50.744"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.648" endtime="20220216 19:10:50.744"/>
+</kw>
+<kw name="Enter Password" library="register_resource">
+<arg>${PASSWORD_NEW}</arg>
+<doc>Enters password in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_PASSWORD}</arg>
+<arg>${PASSWORD_NEW}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.745" level="INFO">Typing text 'TestNpvf' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.745" endtime="20220216 19:10:50.827"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.744" endtime="20220216 19:10:50.828"/>
+</kw>
+<kw name="Enter FirstName" library="register_resource">
+<arg>${FIRSTNAME_NEW}</arg>
+<doc>Enters firstname in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_FIRSTNAME}</arg>
+<arg>${FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.829" level="INFO">Typing text 'First_pvf' into text field 'id=firstname'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.828" endtime="20220216 19:10:50.917"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.828" endtime="20220216 19:10:50.918"/>
+</kw>
+<kw name="Enter FamilyName" library="register_resource">
+<arg>${FAMILYNAME_NEW}</arg>
+<doc>Enters lastname in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_LASTNAME}</arg>
+<arg>${FAMILY_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:50.919" level="INFO">Typing text 'Family_pvf' into text field 'id=lastname'.</msg>
+<status status="PASS" starttime="20220216 19:10:50.918" endtime="20220216 19:10:51.008"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.918" endtime="20220216 19:10:51.008"/>
+</kw>
+<kw name="Enter PhoneNumber" library="register_resource">
+<doc>Enters phone number in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_PHONE}</arg>
+<arg>${PHONE_NUM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:51.009" level="INFO">Typing text '5530468143' into text field 'id=phone'.</msg>
+<status status="PASS" starttime="20220216 19:10:51.009" endtime="20220216 19:10:51.093"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:51.008" endtime="20220216 19:10:51.093"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:50.553" endtime="20220216 19:10:51.093"/>
+</kw>
+<kw name="Click Register And Verify Message" library="register_resource">
+<doc>Clicks register button and verify the message for existing user</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOC_REGISTER_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:51.095" level="INFO">Clicking element 'xpath=//input[@value="Register"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:51.094" endtime="20220216 19:10:51.171"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${MSG}</var>
+<arg>${LOC_ERROR_MESSAGE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:51.211" level="INFO">${MSG} = User test.namepvf is already registered.</msg>
+<status status="PASS" starttime="20220216 19:10:51.171" endtime="20220216 19:10:51.211"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${MSG}</arg>
+<arg>already registered</arg>
+<arg>Existing user registration does not show error message.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220216 19:10:51.212" endtime="20220216 19:10:51.212"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:51.093" endtime="20220216 19:10:51.212"/>
+</kw>
+<doc>Verify registration of existing user information</doc>
+<tag>UICase</tag>
+<status status="PASS" starttime="20220216 19:10:50.552" endtime="20220216 19:10:51.213"/>
+</test>
+<test id="s1-s1-t3" name="Login With Incorrect Credentials">
+<kw name="Open Login Link" library="register_resource">
+<doc>Opens Login link</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOC_LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:51.215" level="INFO">Clicking element 'xpath=//a[@href="/login"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:51.215" endtime="20220216 19:10:51.299"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOC_TXT_USERNAME}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220216 19:10:51.299" endtime="20220216 19:10:51.308"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:51.215" endtime="20220216 19:10:51.309"/>
+</kw>
+<kw name="Enter Username" library="register_resource">
+<arg>${USERNAME_NEW}</arg>
+<doc>Enters username in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_USERNAME}</arg>
+<arg>${USER_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:51.312" level="INFO">Typing text 'test.namepvf' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20220216 19:10:51.311" endtime="20220216 19:10:51.412"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:51.309" endtime="20220216 19:10:51.413"/>
+</kw>
+<kw name="Enter Password" library="register_resource">
+<arg>${INCORRECT_PASSWORD}</arg>
+<doc>Enters password in the text box</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_TXT_PASSWORD}</arg>
+<arg>${PASSWORD_NEW}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:51.414" level="INFO">Typing text '123' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220216 19:10:51.414" endtime="20220216 19:10:51.495"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:51.413" endtime="20220216 19:10:51.495"/>
+</kw>
+<kw name="Verify Incorrect Login Error" library="register_resource">
+<doc>Verify error for invalid login credentials</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOC_LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:51.496" level="INFO">Clicking element 'xpath=//input[@value="Log In"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:51.496" endtime="20220216 19:10:51.656"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${LOC_LOGIN_ERROR}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220216 19:10:51.674" level="INFO">Current page contains element 'xpath=//h1[text()="Login Failure"]'.</msg>
+<status status="PASS" starttime="20220216 19:10:51.657" endtime="20220216 19:10:51.674"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${MSG}</var>
+<arg>${LOC_LOGIN_ERROR_MESSAGE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220216 19:10:51.709" level="INFO">${MSG} = You provided incorrect login details</msg>
+<status status="PASS" starttime="20220216 19:10:51.674" endtime="20220216 19:10:51.709"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${MSG}</arg>
+<arg>You provided incorrect login details</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220216 19:10:51.710" endtime="20220216 19:10:51.710"/>
+</kw>
+<status status="PASS" starttime="20220216 19:10:51.495" endtime="20220216 19:10:51.710"/>
+</kw>
+<doc>Verify error message by giving incorrect login credentials</doc>
+<tag>UICase</tag>
+<status status="PASS" starttime="20220216 19:10:51.213" endtime="20220216 19:10:51.711"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220216 19:10:51.712" endtime="20220216 19:10:51.807"/>
+</kw>
+<doc>This suite contains test cases related to user registration.</doc>
+<status status="PASS" starttime="20220216 19:10:45.195" endtime="20220216 19:10:51.807"/>
+</suite>
+<suite id="s1-s2" name="02 Api Test" source="/Users/divya/Desktop/Divya_Assignment_Signant/flasky_demo_app/tests/02_api_test.robot">
+<test id="s1-s2-t1" name="Register New Users">
+<kw name="Generate Random String" library="String">
+<var>${RNUM}</var>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220216 19:10:52.143" level="INFO">${RNUM} = qmrvtprh</msg>
+<status status="PASS" starttime="20220216 19:10:52.143" endtime="20220216 19:10:52.144"/>
+</kw>
+<kw name="Register User" library="APILibrary">
+<var>${reponse}</var>
+<arg>base_url=${GET_USERS_URL}</arg>
+<arg>rnum=${RNUM}</arg>
+<msg timestamp="20220216 19:10:52.288" level="INFO">${reponse} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220216 19:10:52.144" endtime="20220216 19:10:52.289"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${reponse.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220216 19:10:52.290" level="INFO">{"message":"Created","status":"SUCCESS"}
+</msg>
+<status status="PASS" starttime="20220216 19:10:52.289" endtime="20220216 19:10:52.291"/>
+</kw>
+<doc>Registers new users in the application using API.</doc>
+<tag>API</tag>
+<status status="PASS" starttime="20220216 19:10:52.141" endtime="20220216 19:10:52.291"/>
+</test>
+<test id="s1-s2-t2" name="Review Users Registered In System">
+<kw name="Get Users" library="APILibrary">
+<var>${reponse}</var>
+<arg>${GET_USERS_URL}</arg>
+<msg timestamp="20220216 19:10:52.330" level="INFO">${reponse} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220216 19:10:52.293" endtime="20220216 19:10:52.330"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${reponse.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220216 19:10:52.332" level="INFO">{"payload":["bszscwlg","cxeptyzj","iyrqdjfa","jdjelqqm","lbdczpkk","lttuddgs","nxqbzgxk","qmrvtprh","test.namejge","test.namejjp","test.namepvf","test.namesaq","test.namezqa","yqctwodj","zjqqxhzk"],"status":"SUCCESS"}
+</msg>
+<status status="PASS" starttime="20220216 19:10:52.330" endtime="20220216 19:10:52.332"/>
+</kw>
+<doc>Get all the users registered in system.</doc>
+<tag>API</tag>
+<status status="PASS" starttime="20220216 19:10:52.292" endtime="20220216 19:10:52.332"/>
+</test>
+<test id="s1-s2-t3" name="Get Personal Information Of User">
+<kw name="Generate Random String" library="String">
+<var>${RNUM}</var>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220216 19:10:52.336" level="INFO">${RNUM} = wjfmcrtf</msg>
+<status status="PASS" starttime="20220216 19:10:52.334" endtime="20220216 19:10:52.336"/>
+</kw>
+<kw name="Register User" library="APILibrary">
+<var>${reponse}</var>
+<arg>base_url=${GET_USERS_URL}</arg>
+<arg>rnum=${RNUM}</arg>
+<msg timestamp="20220216 19:10:52.520" level="INFO">${reponse} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220216 19:10:52.337" endtime="20220216 19:10:52.520"/>
+</kw>
+<kw name="Authenticate User" library="APILibrary">
+<var>${auth_token}</var>
+<arg>url=${AUTHENTICATION_URL}</arg>
+<arg>username=${RNUM}</arg>
+<msg timestamp="20220216 19:10:52.841" level="INFO">${auth_token} = ['MTEzOTM1NzIxNzY3Mjg1MDI1MTM4OTcwNTk3NzY3MDU0MjU5NzI0']</msg>
+<status status="PASS" starttime="20220216 19:10:52.522" endtime="20220216 19:10:52.841"/>
+</kw>
+<kw name="Get Personal Info Of Users" library="APILibrary">
+<var>${user_info_reponse}</var>
+<arg>base_url=${GET_USERS_URL}/${RNUM}</arg>
+<arg>token=${auth_token[0]}</arg>
+<msg timestamp="20220216 19:10:52.850" level="INFO">${user_info_reponse} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220216 19:10:52.841" endtime="20220216 19:10:52.850"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${user_info_reponse.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220216 19:10:52.852" level="INFO">{"message":"retrieval succesful","payload":{"firstname":"Alex","lastname":"Diesel","phone":"67543218790"},"status":"SUCCESS"}
+</msg>
+<status status="PASS" starttime="20220216 19:10:52.851" endtime="20220216 19:10:52.852"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${user_info_reponse.text}</arg>
+<arg>${FNAME_API}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220216 19:10:52.853" endtime="20220216 19:10:52.854"/>
+</kw>
+<doc>Get personal information of a particular user</doc>
+<tag>API</tag>
+<status status="PASS" starttime="20220216 19:10:52.333" endtime="20220216 19:10:52.855"/>
+</test>
+<test id="s1-s2-t4" name="Update Personal Information Of A User">
+<kw name="Generate Random String" library="String">
+<var>${RNUM}</var>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220216 19:10:52.858" level="INFO">${RNUM} = uwbbtqau</msg>
+<status status="PASS" starttime="20220216 19:10:52.857" endtime="20220216 19:10:52.858"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${UPDATE_LASTNAME}</var>
+<arg>${RNUM}Updated</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220216 19:10:52.860" level="INFO">${UPDATE_LASTNAME} = uwbbtqauUpdated</msg>
+<status status="PASS" starttime="20220216 19:10:52.858" endtime="20220216 19:10:52.861"/>
+</kw>
+<kw name="Register User" library="APILibrary">
+<var>${reponse}</var>
+<arg>base_url=${GET_USERS_URL}</arg>
+<arg>rnum=${RNUM}</arg>
+<msg timestamp="20220216 19:10:53.014" level="INFO">${reponse} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220216 19:10:52.862" endtime="20220216 19:10:53.014"/>
+</kw>
+<kw name="Authenticate User" library="APILibrary">
+<var>${auth_token}</var>
+<arg>url=${AUTHENTICATION_URL}</arg>
+<arg>username=${RNUM}</arg>
+<msg timestamp="20220216 19:10:53.152" level="INFO">${auth_token} = ['MjI0NjIzMTc3NTM5NjE1NzQwOTg1OTI3MTM5OTkwMDMzMjY0MDE1']</msg>
+<status status="PASS" starttime="20220216 19:10:53.014" endtime="20220216 19:10:53.153"/>
+</kw>
+<kw name="Update Personal Info Of A User" library="APILibrary">
+<var>${personal_info_resp}</var>
+<arg>base_url=${GET_USERS_URL}/${RNUM}</arg>
+<arg>token=${auth_token[0]}</arg>
+<msg timestamp="20220216 19:10:53.166" level="INFO">${personal_info_resp} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220216 19:10:53.153" endtime="20220216 19:10:53.166"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${personal_info_resp.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220216 19:10:53.167" level="INFO">{"message":"Updated","status":"SUCCESS"}
+</msg>
+<status status="PASS" starttime="20220216 19:10:53.166" endtime="20220216 19:10:53.167"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${personal_info_resp.text}</arg>
+<arg>${LNAME_UPDATED}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220216 19:10:53.168" endtime="20220216 19:10:53.169"/>
+</kw>
+<doc>Update personal information of a user</doc>
+<tag>API</tag>
+<status status="PASS" starttime="20220216 19:10:52.856" endtime="20220216 19:10:53.169"/>
+</test>
+<doc>This suite contains all test cases related to API automation.</doc>
+<status status="PASS" starttime="20220216 19:10:51.812" endtime="20220216 19:10:53.170"/>
+</suite>
+<status status="PASS" starttime="20220216 19:10:45.148" endtime="20220216 19:10:53.173"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">API</stat>
+<stat pass="3" fail="0" skip="0">UICase</stat>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="01 Register">Tests.01 Register</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s2" name="02 Api Test">Tests.02 Api Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
